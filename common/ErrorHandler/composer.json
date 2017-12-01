@@ -1,0 +1,23 @@
+{
+  "name": "ddm/error-handler",
+  "type": "package",
+  "authors": [
+    {
+      "name": "Doubledot Media Ltd",
+      "email": "dev@doubledotmedia.com"
+    }
+  ],
+  "require": {
+    "monolog/monolog": "^1.15"
+  },
+  "autoload": {
+    "psr-4": {
+      "Ddm\\ErrorHandler\\": "src"
+    }
+  },
+  "autoload-dev": {
+    "psr-4": {
+      "Ddm\\ErrorHandler\\Test\\": "tests"
+    }
+  }
+}

@@ -1,0 +1,2700 @@
+{
+    "swagger": "2.0",
+    "info": {
+        "title": "Dayatalytics",
+        "description": "@link /docs/daytalytics/daytalytics.md",
+        "version": "6.0.0"
+    },
+    "host": "api.daytalytics.com",
+    "basePath": "/v6.0/",
+    "schemes": [
+        "https"
+    ],
+    "paths": {
+        "/alexa/rank": {
+            "get": {
+                "tags": [
+                    "Alexa"
+                ],
+                "summary": "Alexa",
+                "description": "Alexa",
+                "produces": [
+                    "application/xml",
+                    "application/json",
+                    "text/html",
+                    "application/vnd.php-object"
+                ],
+                "parameters": [
+                    {
+                        "name": "url",
+                        "in": "query",
+                        "description": "Website url",
+                        "required": true,
+                        "type": "string",
+                        "default": ""
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "An example resource"
+                    },
+                    "204": {
+                        "description": "An empty resource"
+                    },
+                    "400": {
+                        "description": "Request error"
+                    },
+                    "401": {
+                        "description": "Unauthorized error"
+                    },
+                    "403": {
+                        "description": "Unauthenticated error"
+                    },
+                    "500": {
+                        "description": "Server error"
+                    }
+                }
+            }
+        },
+        "/alexa/backlinks": {
+            "get": {
+                "tags": [
+                    "Alexa"
+                ],
+                "summary": "Alexa",
+                "description": "Alexa",
+                "produces": [
+                    "application/xml",
+                    "application/json",
+                    "text/html",
+                    "application/vnd.php-object"
+                ],
+                "parameters": [
+                    {
+                        "name": "url",
+                        "in": "query",
+                        "description": "Website url",
+                        "required": true,
+                        "type": "string",
+                        "default": ""
+                    },
+                    {
+                        "name": "startfrom",
+                        "in": "query",
+                        "description": "Return backlinks from this number",
+                        "required": false,
+                        "type": "number",
+                        "default": 0
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "An example resource"
+                    },
+                    "204": {
+                        "description": "An empty resource"
+                    },
+                    "400": {
+                        "description": "Request error"
+                    },
+                    "401": {
+                        "description": "Unauthorized error"
+                    },
+                    "403": {
+                        "description": "Unauthenticated error"
+                    },
+                    "500": {
+                        "description": "Server error"
+                    }
+                }
+            }
+        },
+        "/alexa_top_sites": {
+            "get": {
+                "tags": [
+                    "AlexaTopSites"
+                ],
+                "summary": "AlexaTopSites",
+                "description": "AlexaTopSites",
+                "produces": [
+                    "application/xml",
+                    "application/json",
+                    "text/html",
+                    "application/vnd.php-object"
+                ],
+                "parameters": [
+                    {
+                        "name": "countryCode",
+                        "in": "query",
+                        "description": "",
+                        "required": true,
+                        "type": "string",
+                        "default": ""
+                    },
+                    {
+                        "name": "numReturn",
+                        "in": "query",
+                        "description": "",
+                        "required": false,
+                        "type": "number",
+                        "format": "integer",
+                        "default": 100
+                    },
+                    {
+                        "name": "startNum",
+                        "in": "query",
+                        "description": "",
+                        "required": false,
+                        "type": "number",
+                        "format": "integer",
+                        "default": 1
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "An example resource"
+                    },
+                    "204": {
+                        "description": "An empty resource"
+                    },
+                    "400": {
+                        "description": "Request error"
+                    },
+                    "401": {
+                        "description": "Unauthorized error"
+                    },
+                    "403": {
+                        "description": "Unauthenticated error"
+                    },
+                    "500": {
+                        "description": "Server error"
+                    }
+                }
+            }
+        },
+        "/batch_request": {
+            "get": {
+                "tags": [
+                    "BatchRequest"
+                ],
+                "summary": "BatchRequest",
+                "description": "BatchRequest",
+                "produces": [
+                    "application/xml",
+                    "application/json",
+                    "text/html",
+                    "application/vnd.php-object"
+                ],
+                "parameters": [
+                    {
+                        "name": "requests",
+                        "in": "query",
+                        "description": "",
+                        "required": true,
+                        "type": "array",
+                        "items": {
+                            "module": {
+                                "type": "string",
+                                "required": true,
+                                "description": "Module for each batch operation (all must be for the same module)"
+                            },
+                            "type": {
+                                "type": "string",
+                                "required": false,
+                                "description": "Module service type for each batch operation"
+                            },
+                            "_n": {
+                                "description": "Inidivual input param(s) for the service"
+                            }
+                        },
+                        "default": ""
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "An example resource"
+                    },
+                    "204": {
+                        "description": "An empty resource"
+                    },
+                    "400": {
+                        "description": "Request error"
+                    },
+                    "401": {
+                        "description": "Unauthorized error"
+                    },
+                    "403": {
+                        "description": "Unauthenticated error"
+                    },
+                    "500": {
+                        "description": "Server error"
+                    }
+                }
+            }
+        },
+        "/bbb/organizationalsearchbydomain": {
+            "get": {
+                "tags": [
+                    "Bbb"
+                ],
+                "summary": "Bbb",
+                "description": "Bbb",
+                "produces": [
+                    "application/xml",
+                    "application/json",
+                    "text/html",
+                    "application/vnd.php-object"
+                ],
+                "parameters": [
+                    {
+                        "name": "domain",
+                        "in": "query",
+                        "description": "Domain name e.g. example-domain.com",
+                        "required": true,
+                        "type": "string",
+                        "default": ""
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "An example resource"
+                    },
+                    "204": {
+                        "description": "An empty resource"
+                    },
+                    "400": {
+                        "description": "Request error"
+                    },
+                    "401": {
+                        "description": "Unauthorized error"
+                    },
+                    "403": {
+                        "description": "Unauthenticated error"
+                    },
+                    "500": {
+                        "description": "Server error"
+                    }
+                }
+            }
+        },
+        "/bing_search/ns": {
+            "get": {
+                "tags": [
+                    "BingSearch"
+                ],
+                "summary": "BingSearch",
+                "description": "BingSearch",
+                "produces": [
+                    "application/xml",
+                    "application/json",
+                    "text/html",
+                    "application/vnd.php-object"
+                ],
+                "parameters": [
+                    {
+                        "name": "keyword",
+                        "in": "query",
+                        "description": "Keyword search term",
+                        "required": true,
+                        "type": "string",
+                        "default": ""
+                    },
+                    {
+                        "name": "limit",
+                        "in": "query",
+                        "description": "Maximum number of search results",
+                        "required": false,
+                        "type": "number",
+                        "format": "integer",
+                        "default": 10,
+                        "maximum": 200,
+                        "minimum": 1
+                    },
+                    {
+                        "name": "start",
+                        "in": "query",
+                        "description": "Start position of results",
+                        "required": false,
+                        "type": "number",
+                        "format": "integer",
+                        "default": 0
+                    },
+                    {
+                        "name": "loc",
+                        "in": "query",
+                        "description": "Search location [Options: 'us' (USA - United States), 'bg' (Bulgaria), 'cz' (Czech Republic), 'dk' (Denmark), 'at' (Austria), 'ch' (Switzerland), 'de' (Germany), 'gr' (Greece), 'au' (Australia), 'ca' (Canada), 'gb' (United Kingdom), 'id' (Indonesia), 'ie' (Ireland), 'in' (India), 'my' (Malaysia), 'nz' (New Zealand), 'ph' (Philippines), 'sg' (Singapore), 'xa' (Arabia), 'za' (South Africa), 'ar' (Argentina), 'cl' (Chile), 'es' (Spain), 'mx' (Mexico), 'xl' (Latin America), 'ee' (Estonia), 'fi' (Finland), 'fr' (France), 'il' (Israel), 'hr' (Croatia), 'hu' (Hungary), 'it' (Italy), 'jp' (Japan), 'kr' (Korea), 'lt' (Lithuania), 'lv' (Latvia), 'no' (Norway), 'be' (Belgium), 'nl' (Netherlands), 'pl' (Poland), 'br' (Brazil), 'pt' (Portugal), 'ro' (Romania), 'ru' (Russia), 'sk' (Slovak Republic), 'sl' (Slovenia), 'se' (Sweden), 'th' (Thailand), 'tr' (Turkey), 'ua' (Ukraine), 'cn' (China), 'hk' (Hong Kong SAR), 'tw' (Taiwan)]",
+                        "required": false,
+                        "type": "string",
+                        "default": "us"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "An example resource"
+                    },
+                    "204": {
+                        "description": "An empty resource"
+                    },
+                    "400": {
+                        "description": "Request error"
+                    },
+                    "401": {
+                        "description": "Unauthorized error"
+                    },
+                    "403": {
+                        "description": "Unauthenticated error"
+                    },
+                    "500": {
+                        "description": "Server error"
+                    }
+                }
+            }
+        },
+        "/bing_search/pl": {
+            "get": {
+                "tags": [
+                    "BingSearch"
+                ],
+                "summary": "BingSearch",
+                "description": "BingSearch",
+                "produces": [
+                    "application/xml",
+                    "application/json",
+                    "text/html",
+                    "application/vnd.php-object"
+                ],
+                "parameters": [
+                    {
+                        "name": "keyword",
+                        "in": "query",
+                        "description": "Keyword search term",
+                        "required": true,
+                        "type": "string",
+                        "default": ""
+                    },
+                    {
+                        "name": "limit",
+                        "in": "query",
+                        "description": "Maximum number of search results",
+                        "required": false,
+                        "type": "number",
+                        "format": "integer",
+                        "default": 10,
+                        "maximum": 200,
+                        "minimum": 1
+                    },
+                    {
+                        "name": "start",
+                        "in": "query",
+                        "description": "Start position of results",
+                        "required": false,
+                        "type": "number",
+                        "format": "integer",
+                        "default": 0
+                    },
+                    {
+                        "name": "loc",
+                        "in": "query",
+                        "description": "Search location [Options: 'us' (USA - United States), 'bg' (Bulgaria), 'cz' (Czech Republic), 'dk' (Denmark), 'at' (Austria), 'ch' (Switzerland), 'de' (Germany), 'gr' (Greece), 'au' (Australia), 'ca' (Canada), 'gb' (United Kingdom), 'id' (Indonesia), 'ie' (Ireland), 'in' (India), 'my' (Malaysia), 'nz' (New Zealand), 'ph' (Philippines), 'sg' (Singapore), 'xa' (Arabia), 'za' (South Africa), 'ar' (Argentina), 'cl' (Chile), 'es' (Spain), 'mx' (Mexico), 'xl' (Latin America), 'ee' (Estonia), 'fi' (Finland), 'fr' (France), 'il' (Israel), 'hr' (Croatia), 'hu' (Hungary), 'it' (Italy), 'jp' (Japan), 'kr' (Korea), 'lt' (Lithuania), 'lv' (Latvia), 'no' (Norway), 'be' (Belgium), 'nl' (Netherlands), 'pl' (Poland), 'br' (Brazil), 'pt' (Portugal), 'ro' (Romania), 'ru' (Russia), 'sk' (Slovak Republic), 'sl' (Slovenia), 'se' (Sweden), 'th' (Thailand), 'tr' (Turkey), 'ua' (Ukraine), 'cn' (China), 'hk' (Hong Kong SAR), 'tw' (Taiwan)]",
+                        "required": false,
+                        "type": "string",
+                        "default": "us"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "An example resource"
+                    },
+                    "204": {
+                        "description": "An empty resource"
+                    },
+                    "400": {
+                        "description": "Request error"
+                    },
+                    "401": {
+                        "description": "Unauthorized error"
+                    },
+                    "403": {
+                        "description": "Unauthenticated error"
+                    },
+                    "500": {
+                        "description": "Server error"
+                    }
+                }
+            }
+        },
+        "/currency_source/convert": {
+            "get": {
+                "tags": [
+                    "CurrencySource"
+                ],
+                "summary": "CurrencySource",
+                "description": "CurrencySource",
+                "produces": [
+                    "application/xml",
+                    "application/json",
+                    "text/html",
+                    "application/vnd.php-object"
+                ],
+                "parameters": [
+                    {
+                        "name": "from",
+                        "in": "query",
+                        "description": "A 3 letter currency code eg NZD. [Options are available from currencies]",
+                        "required": true,
+                        "type": "string",
+                        "default": ""
+                    },
+                    {
+                        "name": "to",
+                        "in": "query",
+                        "description": "An array of 3 letter currency codes to convert to. [Options are available from currencies]",
+                        "required": true,
+                        "type": "array",
+                        "items": {
+                            "type": "string"
+                        },
+                        "collectionFormat": "multi",
+                        "default": ""
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "An example resource"
+                    },
+                    "204": {
+                        "description": "An empty resource"
+                    },
+                    "400": {
+                        "description": "Request error"
+                    },
+                    "401": {
+                        "description": "Unauthorized error"
+                    },
+                    "403": {
+                        "description": "Unauthenticated error"
+                    },
+                    "500": {
+                        "description": "Server error"
+                    }
+                }
+            }
+        },
+        "/currency_source/currencies": {
+            "get": {
+                "tags": [
+                    "CurrencySource"
+                ],
+                "summary": "CurrencySource",
+                "description": "CurrencySource",
+                "produces": [
+                    "application/xml",
+                    "application/json",
+                    "text/html",
+                    "application/vnd.php-object"
+                ],
+                "responses": {
+                    "200": {
+                        "description": "An example resource"
+                    },
+                    "204": {
+                        "description": "An empty resource"
+                    },
+                    "400": {
+                        "description": "Request error"
+                    },
+                    "401": {
+                        "description": "Unauthorized error"
+                    },
+                    "403": {
+                        "description": "Unauthenticated error"
+                    },
+                    "500": {
+                        "description": "Server error"
+                    }
+                }
+            }
+        },
+        "/domain_tools_opensrs/check": {
+            "get": {
+                "tags": [
+                    "DomainToolsOpensrs"
+                ],
+                "summary": "DomainToolsOpensrs",
+                "description": "DomainToolsOpensrs",
+                "produces": [
+                    "application/xml",
+                    "application/json",
+                    "text/html",
+                    "application/vnd.php-object"
+                ],
+                "parameters": [
+                    {
+                        "name": "domain",
+                        "in": "query",
+                        "description": "Domain to check, exclude tld",
+                        "required": true,
+                        "type": "string",
+                        "default": ""
+                    },
+                    {
+                        "name": "tld",
+                        "in": "query",
+                        "description": "tld to check. true means taken.",
+                        "required": true,
+                        "type": "array",
+                        "items": {
+                            "type": "string"
+                        },
+                        "collectionFormat": "multi",
+                        "default": "",
+                        "maxItems": 50,
+                        "minItems": 1
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "An example resource"
+                    },
+                    "204": {
+                        "description": "An empty resource"
+                    },
+                    "400": {
+                        "description": "Request error"
+                    },
+                    "401": {
+                        "description": "Unauthorized error"
+                    },
+                    "403": {
+                        "description": "Unauthenticated error"
+                    },
+                    "500": {
+                        "description": "Server error"
+                    }
+                }
+            }
+        },
+        "/ebay_finding_api/finditemsbykeywords": {
+            "get": {
+                "tags": [
+                    "EbayFindingApi"
+                ],
+                "summary": "EbayFindingApi",
+                "description": "EbayFindingApi",
+                "produces": [
+                    "application/xml",
+                    "application/json",
+                    "text/html",
+                    "application/vnd.php-object"
+                ],
+                "parameters": [
+                    {
+                        "name": "keyword",
+                        "in": "query",
+                        "description": "Keyword search term",
+                        "required": true,
+                        "type": "string",
+                        "default": ""
+                    },
+                    {
+                        "name": "loc",
+                        "in": "query",
+                        "description": "Location [Options: 'us' (EBAY-US), 'uk' (EBAY-GB), 'au' (EBAY-AU), 'ca' (EBAY-ENCA)]",
+                        "required": true,
+                        "type": "number",
+                        "default": ""
+                    },
+                    {
+                        "name": "start",
+                        "in": "query",
+                        "description": "Start time",
+                        "required": false,
+                        "type": "string",
+                        "format": "dateTime",
+                        "default": ""
+                    },
+                    {
+                        "name": "end",
+                        "in": "query",
+                        "description": "End time",
+                        "required": false,
+                        "type": "string",
+                        "format": "dateTime",
+                        "default": ""
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "An example resource"
+                    },
+                    "204": {
+                        "description": "An empty resource"
+                    },
+                    "400": {
+                        "description": "Request error"
+                    },
+                    "401": {
+                        "description": "Unauthorized error"
+                    },
+                    "403": {
+                        "description": "Unauthenticated error"
+                    },
+                    "500": {
+                        "description": "Server error"
+                    }
+                }
+            }
+        },
+        "/ebay_finding_api/finditemscompletedbykeywords": {
+            "get": {
+                "tags": [
+                    "EbayFindingApi"
+                ],
+                "summary": "EbayFindingApi",
+                "description": "EbayFindingApi",
+                "produces": [
+                    "application/xml",
+                    "application/json",
+                    "text/html",
+                    "application/vnd.php-object"
+                ],
+                "parameters": [
+                    {
+                        "name": "keyword",
+                        "in": "query",
+                        "description": "Keyword search term",
+                        "required": true,
+                        "type": "string",
+                        "default": ""
+                    },
+                    {
+                        "name": "loc",
+                        "in": "query",
+                        "description": "Location [Options: 'us' (EBAY-US), 'uk' (EBAY-GB), 'au' (EBAY-AU), 'ca' (EBAY-ENCA)]",
+                        "required": true,
+                        "type": "number",
+                        "default": ""
+                    },
+                    {
+                        "name": "start",
+                        "in": "query",
+                        "description": "Start time",
+                        "required": false,
+                        "type": "string",
+                        "format": "dateTime",
+                        "default": ""
+                    },
+                    {
+                        "name": "end",
+                        "in": "query",
+                        "description": "End time",
+                        "required": false,
+                        "type": "string",
+                        "format": "dateTime",
+                        "default": ""
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "An example resource"
+                    },
+                    "204": {
+                        "description": "An empty resource"
+                    },
+                    "400": {
+                        "description": "Request error"
+                    },
+                    "401": {
+                        "description": "Unauthorized error"
+                    },
+                    "403": {
+                        "description": "Unauthenticated error"
+                    },
+                    "500": {
+                        "description": "Server error"
+                    }
+                }
+            }
+        },
+        "/ebay_finding_api/finditemstotalbykeywords": {
+            "get": {
+                "tags": [
+                    "EbayFindingApi"
+                ],
+                "summary": "EbayFindingApi",
+                "description": "EbayFindingApi",
+                "produces": [
+                    "application/xml",
+                    "application/json",
+                    "text/html",
+                    "application/vnd.php-object"
+                ],
+                "parameters": [
+                    {
+                        "name": "keyword",
+                        "in": "query",
+                        "description": "Keyword search term",
+                        "required": true,
+                        "type": "string",
+                        "default": ""
+                    },
+                    {
+                        "name": "loc",
+                        "in": "query",
+                        "description": "Location [Options: 'us' (EBAY-US), 'uk' (EBAY-GB), 'au' (EBAY-AU), 'ca' (EBAY-ENCA)]",
+                        "required": true,
+                        "type": "number",
+                        "default": ""
+                    },
+                    {
+                        "name": "start",
+                        "in": "query",
+                        "description": "Start time",
+                        "required": false,
+                        "type": "string",
+                        "format": "dateTime",
+                        "default": ""
+                    },
+                    {
+                        "name": "end",
+                        "in": "query",
+                        "description": "End time",
+                        "required": false,
+                        "type": "string",
+                        "format": "dateTime",
+                        "default": ""
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "An example resource"
+                    },
+                    "204": {
+                        "description": "An empty resource"
+                    },
+                    "400": {
+                        "description": "Request error"
+                    },
+                    "401": {
+                        "description": "Unauthorized error"
+                    },
+                    "403": {
+                        "description": "Unauthenticated error"
+                    },
+                    "500": {
+                        "description": "Server error"
+                    }
+                }
+            }
+        },
+        "/ebay_finding_api/finditemscompletedtotalbykeywords": {
+            "get": {
+                "tags": [
+                    "EbayFindingApi"
+                ],
+                "summary": "EbayFindingApi",
+                "description": "EbayFindingApi",
+                "produces": [
+                    "application/xml",
+                    "application/json",
+                    "text/html",
+                    "application/vnd.php-object"
+                ],
+                "parameters": [
+                    {
+                        "name": "keyword",
+                        "in": "query",
+                        "description": "Keyword search term",
+                        "required": true,
+                        "type": "string",
+                        "default": ""
+                    },
+                    {
+                        "name": "loc",
+                        "in": "query",
+                        "description": "Location [Options: 'us' (EBAY-US), 'uk' (EBAY-GB), 'au' (EBAY-AU), 'ca' (EBAY-ENCA)]",
+                        "required": true,
+                        "type": "number",
+                        "default": ""
+                    },
+                    {
+                        "name": "start",
+                        "in": "query",
+                        "description": "Start time",
+                        "required": false,
+                        "type": "string",
+                        "format": "dateTime",
+                        "default": ""
+                    },
+                    {
+                        "name": "end",
+                        "in": "query",
+                        "description": "End time",
+                        "required": false,
+                        "type": "string",
+                        "format": "dateTime",
+                        "default": ""
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "An example resource"
+                    },
+                    "204": {
+                        "description": "An empty resource"
+                    },
+                    "400": {
+                        "description": "Request error"
+                    },
+                    "401": {
+                        "description": "Unauthorized error"
+                    },
+                    "403": {
+                        "description": "Unauthenticated error"
+                    },
+                    "500": {
+                        "description": "Server error"
+                    }
+                }
+            }
+        },
+        "/ebay_finding_api/findsolditemstotalbykeywords": {
+            "get": {
+                "tags": [
+                    "EbayFindingApi"
+                ],
+                "summary": "EbayFindingApi",
+                "description": "EbayFindingApi",
+                "produces": [
+                    "application/xml",
+                    "application/json",
+                    "text/html",
+                    "application/vnd.php-object"
+                ],
+                "parameters": [
+                    {
+                        "name": "keyword",
+                        "in": "query",
+                        "description": "Keyword search term",
+                        "required": true,
+                        "type": "string",
+                        "default": ""
+                    },
+                    {
+                        "name": "loc",
+                        "in": "query",
+                        "description": "Location [Options: 'us' (EBAY-US), 'uk' (EBAY-GB), 'au' (EBAY-AU), 'ca' (EBAY-ENCA)]",
+                        "required": true,
+                        "type": "number",
+                        "default": ""
+                    },
+                    {
+                        "name": "start",
+                        "in": "query",
+                        "description": "Start time",
+                        "required": false,
+                        "type": "string",
+                        "format": "dateTime",
+                        "default": ""
+                    },
+                    {
+                        "name": "end",
+                        "in": "query",
+                        "description": "End time",
+                        "required": false,
+                        "type": "string",
+                        "format": "dateTime",
+                        "default": ""
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "An example resource"
+                    },
+                    "204": {
+                        "description": "An empty resource"
+                    },
+                    "400": {
+                        "description": "Request error"
+                    },
+                    "401": {
+                        "description": "Unauthorized error"
+                    },
+                    "403": {
+                        "description": "Unauthenticated error"
+                    },
+                    "500": {
+                        "description": "Server error"
+                    }
+                }
+            }
+        },
+        "/ebay_finding_api/finditemsadvancedtotalbykeywords": {
+            "get": {
+                "tags": [
+                    "EbayFindingApi"
+                ],
+                "summary": "EbayFindingApi",
+                "description": "EbayFindingApi",
+                "produces": [
+                    "application/xml",
+                    "application/json",
+                    "text/html",
+                    "application/vnd.php-object"
+                ],
+                "parameters": [
+                    {
+                        "name": "keyword",
+                        "in": "query",
+                        "description": "Keyword search term",
+                        "required": true,
+                        "type": "string",
+                        "default": ""
+                    },
+                    {
+                        "name": "loc",
+                        "in": "query",
+                        "description": "Location [Options: 'us' (EBAY-US), 'uk' (EBAY-GB), 'au' (EBAY-AU), 'ca' (EBAY-ENCA)]",
+                        "required": true,
+                        "type": "number",
+                        "default": ""
+                    },
+                    {
+                        "name": "start",
+                        "in": "query",
+                        "description": "Start time",
+                        "required": false,
+                        "type": "string",
+                        "format": "dateTime",
+                        "default": ""
+                    },
+                    {
+                        "name": "end",
+                        "in": "query",
+                        "description": "End time",
+                        "required": false,
+                        "type": "string",
+                        "format": "dateTime",
+                        "default": ""
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "An example resource"
+                    },
+                    "204": {
+                        "description": "An empty resource"
+                    },
+                    "400": {
+                        "description": "Request error"
+                    },
+                    "401": {
+                        "description": "Unauthorized error"
+                    },
+                    "403": {
+                        "description": "Unauthenticated error"
+                    },
+                    "500": {
+                        "description": "Server error"
+                    }
+                }
+            }
+        },
+        "/ebay_finding_api/findcatgoriesbykeywords": {
+            "get": {
+                "tags": [
+                    "EbayFindingApi"
+                ],
+                "summary": "EbayFindingApi",
+                "description": "EbayFindingApi",
+                "produces": [
+                    "application/xml",
+                    "application/json",
+                    "text/html",
+                    "application/vnd.php-object"
+                ],
+                "parameters": [
+                    {
+                        "name": "keyword",
+                        "in": "query",
+                        "description": "Keyword search term",
+                        "required": true,
+                        "type": "string",
+                        "default": ""
+                    },
+                    {
+                        "name": "loc",
+                        "in": "query",
+                        "description": "Location [Options: 'us' (EBAY-US), 'uk' (EBAY-GB), 'au' (EBAY-AU), 'ca' (EBAY-ENCA)]",
+                        "required": true,
+                        "type": "number",
+                        "default": ""
+                    },
+                    {
+                        "name": "start",
+                        "in": "query",
+                        "description": "Start time",
+                        "required": false,
+                        "type": "string",
+                        "format": "dateTime",
+                        "default": ""
+                    },
+                    {
+                        "name": "end",
+                        "in": "query",
+                        "description": "End time",
+                        "required": false,
+                        "type": "string",
+                        "format": "dateTime",
+                        "default": ""
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "An example resource"
+                    },
+                    "204": {
+                        "description": "An empty resource"
+                    },
+                    "400": {
+                        "description": "Request error"
+                    },
+                    "401": {
+                        "description": "Unauthorized error"
+                    },
+                    "403": {
+                        "description": "Unauthenticated error"
+                    },
+                    "500": {
+                        "description": "Server error"
+                    }
+                }
+            }
+        },
+        "/ebay_finding_api/findcurrency": {
+            "get": {
+                "tags": [
+                    "EbayFindingApi"
+                ],
+                "summary": "EbayFindingApi",
+                "description": "EbayFindingApi",
+                "produces": [
+                    "application/xml",
+                    "application/json",
+                    "text/html",
+                    "application/vnd.php-object"
+                ],
+                "parameters": [
+                    {
+                        "name": "keyword",
+                        "in": "query",
+                        "description": "Keyword search term",
+                        "required": true,
+                        "type": "string",
+                        "default": ""
+                    },
+                    {
+                        "name": "loc",
+                        "in": "query",
+                        "description": "Location [Options: 'us' (EBAY-US), 'uk' (EBAY-GB), 'au' (EBAY-AU), 'ca' (EBAY-ENCA)]",
+                        "required": true,
+                        "type": "number",
+                        "default": ""
+                    },
+                    {
+                        "name": "start",
+                        "in": "query",
+                        "description": "Start time",
+                        "required": false,
+                        "type": "string",
+                        "format": "dateTime",
+                        "default": ""
+                    },
+                    {
+                        "name": "end",
+                        "in": "query",
+                        "description": "End time",
+                        "required": false,
+                        "type": "string",
+                        "format": "dateTime",
+                        "default": ""
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "An example resource"
+                    },
+                    "204": {
+                        "description": "An empty resource"
+                    },
+                    "400": {
+                        "description": "Request error"
+                    },
+                    "401": {
+                        "description": "Unauthorized error"
+                    },
+                    "403": {
+                        "description": "Unauthenticated error"
+                    },
+                    "500": {
+                        "description": "Server error"
+                    }
+                }
+            }
+        },
+        "/ebay_research_api_alt/researchresults": {
+            "get": {
+                "tags": [
+                    "EbayResearchApiAlt"
+                ],
+                "summary": "EbayResearchApiAlt",
+                "description": "EbayResearchApiAlt",
+                "produces": [
+                    "application/xml",
+                    "application/json",
+                    "text/html",
+                    "application/vnd.php-object"
+                ],
+                "parameters": [
+                    {
+                        "name": "keyword",
+                        "in": "query",
+                        "description": "Keyword search term",
+                        "required": true,
+                        "type": "string",
+                        "default": ""
+                    },
+                    {
+                        "name": "start",
+                        "in": "query",
+                        "description": "Defaults to latest possible. Must be over 30 days old. e.g. 2009-08-01",
+                        "required": false,
+                        "type": "string",
+                        "format": "dateTime",
+                        "default": ""
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "An example resource"
+                    },
+                    "204": {
+                        "description": "An empty resource"
+                    },
+                    "400": {
+                        "description": "Request error"
+                    },
+                    "401": {
+                        "description": "Unauthorized error"
+                    },
+                    "403": {
+                        "description": "Unauthenticated error"
+                    },
+                    "500": {
+                        "description": "Server error"
+                    }
+                }
+            }
+        },
+        "/google_search/ns": {
+            "get": {
+                "tags": [
+                    "GoogleSearch"
+                ],
+                "summary": "GoogleSearch",
+                "description": "GoogleSearch",
+                "produces": [
+                    "application/xml",
+                    "application/json",
+                    "text/html",
+                    "application/vnd.php-object"
+                ],
+                "parameters": [
+                    {
+                        "name": "keyword",
+                        "in": "query",
+                        "description": "Keyword search term",
+                        "required": true,
+                        "type": "string",
+                        "default": ""
+                    },
+                    {
+                        "name": "limit",
+                        "in": "query",
+                        "description": "Maximum number of search results",
+                        "required": false,
+                        "type": "number",
+                        "format": "integer",
+                        "default": 10,
+                        "maximum": 200,
+                        "minimum": 1
+                    },
+                    {
+                        "name": "start",
+                        "in": "query",
+                        "description": "Start position of results",
+                        "required": false,
+                        "type": "number",
+                        "format": "integer",
+                        "default": 0
+                    },
+                    {
+                        "name": "loc",
+                        "in": "query",
+                        "description": "Search location [Options: 'us' (USA - United States), 'be' (Belgium), 'da' (Denmark), 'de' (Germany), 'au' (Australia), 'ca' (Canada), 'uk' (United Kingdom), 'ie' (Ireland), 'in' (India), 'nz' (New Zealand), 'za' (South Africa), 'es' (Spain), 'mx' (Mexico), 'fi' (Finland), 'fr' (France), 'jp' (Japan), 'pl' (Poland), 'br' (Brazil), 'si' (Slovenia), 'se' (Sweden), 'cn' (China)]",
+                        "required": false,
+                        "type": "string",
+                        "default": "us"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "An example resource"
+                    },
+                    "204": {
+                        "description": "An empty resource"
+                    },
+                    "400": {
+                        "description": "Request error"
+                    },
+                    "401": {
+                        "description": "Unauthorized error"
+                    },
+                    "403": {
+                        "description": "Unauthenticated error"
+                    },
+                    "500": {
+                        "description": "Server error"
+                    }
+                }
+            }
+        },
+        "/google_search/pl": {
+            "get": {
+                "tags": [
+                    "GoogleSearch"
+                ],
+                "summary": "GoogleSearch",
+                "description": "GoogleSearch",
+                "produces": [
+                    "application/xml",
+                    "application/json",
+                    "text/html",
+                    "application/vnd.php-object"
+                ],
+                "parameters": [
+                    {
+                        "name": "keyword",
+                        "in": "query",
+                        "description": "Keyword search term",
+                        "required": true,
+                        "type": "string",
+                        "default": ""
+                    },
+                    {
+                        "name": "limit",
+                        "in": "query",
+                        "description": "Maximum number of search results",
+                        "required": false,
+                        "type": "number",
+                        "format": "integer",
+                        "default": 10,
+                        "maximum": 200,
+                        "minimum": 1
+                    },
+                    {
+                        "name": "start",
+                        "in": "query",
+                        "description": "Start position of results",
+                        "required": false,
+                        "type": "number",
+                        "format": "integer",
+                        "default": 0
+                    },
+                    {
+                        "name": "loc",
+                        "in": "query",
+                        "description": "Search location [Options: 'us' (USA - United States), 'be' (Belgium), 'da' (Denmark), 'de' (Germany), 'au' (Australia), 'ca' (Canada), 'uk' (United Kingdom), 'ie' (Ireland), 'in' (India), 'nz' (New Zealand), 'za' (South Africa), 'es' (Spain), 'mx' (Mexico), 'fi' (Finland), 'fr' (France), 'jp' (Japan), 'pl' (Poland), 'br' (Brazil), 'si' (Slovenia), 'se' (Sweden), 'cn' (China)]",
+                        "required": false,
+                        "type": "string",
+                        "default": "us"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "An example resource"
+                    },
+                    "204": {
+                        "description": "An empty resource"
+                    },
+                    "400": {
+                        "description": "Request error"
+                    },
+                    "401": {
+                        "description": "Unauthorized error"
+                    },
+                    "403": {
+                        "description": "Unauthenticated error"
+                    },
+                    "500": {
+                        "description": "Server error"
+                    }
+                }
+            }
+        },
+        "/google_search/news": {
+            "get": {
+                "tags": [
+                    "GoogleSearch"
+                ],
+                "summary": "GoogleSearch",
+                "description": "GoogleSearch",
+                "produces": [
+                    "application/xml",
+                    "application/json",
+                    "text/html",
+                    "application/vnd.php-object"
+                ],
+                "parameters": [
+                    {
+                        "name": "keyword",
+                        "in": "query",
+                        "description": "Keyword search term",
+                        "required": true,
+                        "type": "string",
+                        "default": ""
+                    },
+                    {
+                        "name": "limit",
+                        "in": "query",
+                        "description": "Maximum number of search results",
+                        "required": false,
+                        "type": "number",
+                        "format": "integer",
+                        "default": 10,
+                        "maximum": 200,
+                        "minimum": 1
+                    },
+                    {
+                        "name": "start",
+                        "in": "query",
+                        "description": "Start position of results",
+                        "required": false,
+                        "type": "number",
+                        "format": "integer",
+                        "default": 0
+                    },
+                    {
+                        "name": "loc",
+                        "in": "query",
+                        "description": "Search location [Options: 'us' (USA - United States), 'be' (Belgium), 'da' (Denmark), 'de' (Germany), 'au' (Australia), 'ca' (Canada), 'uk' (United Kingdom), 'ie' (Ireland), 'in' (India), 'nz' (New Zealand), 'za' (South Africa), 'es' (Spain), 'mx' (Mexico), 'fi' (Finland), 'fr' (France), 'jp' (Japan), 'pl' (Poland), 'br' (Brazil), 'si' (Slovenia), 'se' (Sweden), 'cn' (China)]",
+                        "required": false,
+                        "type": "string",
+                        "default": "us"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "An example resource"
+                    },
+                    "204": {
+                        "description": "An empty resource"
+                    },
+                    "400": {
+                        "description": "Request error"
+                    },
+                    "401": {
+                        "description": "Unauthorized error"
+                    },
+                    "403": {
+                        "description": "Unauthenticated error"
+                    },
+                    "500": {
+                        "description": "Server error"
+                    }
+                }
+            }
+        },
+        "/google_search/ps": {
+            "get": {
+                "tags": [
+                    "GoogleSearch"
+                ],
+                "summary": "GoogleSearch",
+                "description": "GoogleSearch",
+                "produces": [
+                    "application/xml",
+                    "application/json",
+                    "text/html",
+                    "application/vnd.php-object"
+                ],
+                "parameters": [
+                    {
+                        "name": "keyword",
+                        "in": "query",
+                        "description": "Keyword search term",
+                        "required": true,
+                        "type": "string",
+                        "default": ""
+                    },
+                    {
+                        "name": "limit",
+                        "in": "query",
+                        "description": "Maximum number of search results",
+                        "required": false,
+                        "type": "number",
+                        "format": "integer",
+                        "default": 10,
+                        "maximum": 200,
+                        "minimum": 1
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "An example resource"
+                    },
+                    "204": {
+                        "description": "An empty resource"
+                    },
+                    "400": {
+                        "description": "Request error"
+                    },
+                    "401": {
+                        "description": "Unauthorized error"
+                    },
+                    "403": {
+                        "description": "Unauthenticated error"
+                    },
+                    "500": {
+                        "description": "Server error"
+                    }
+                }
+            }
+        },
+        "/google_trends/keywordtrenddata": {
+            "get": {
+                "tags": [
+                    "GoogleTrends"
+                ],
+                "summary": "GoogleTrends",
+                "description": "GoogleTrends",
+                "produces": [
+                    "application/xml",
+                    "application/json",
+                    "text/html",
+                    "application/vnd.php-object"
+                ],
+                "parameters": [
+                    {
+                        "name": "keyword",
+                        "in": "query",
+                        "description": "Keyword search term",
+                        "required": true,
+                        "type": "string",
+                        "default": ""
+                    },
+                    {
+                        "name": "start",
+                        "in": "query",
+                        "description": "Start time",
+                        "required": false,
+                        "type": "string",
+                        "format": "dateTime",
+                        "default": ""
+                    },
+                    {
+                        "name": "end",
+                        "in": "query",
+                        "description": "End time",
+                        "required": false,
+                        "type": "string",
+                        "format": "dateTime",
+                        "default": ""
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "An example resource"
+                    },
+                    "204": {
+                        "description": "An empty resource"
+                    },
+                    "400": {
+                        "description": "Request error"
+                    },
+                    "401": {
+                        "description": "Unauthorized error"
+                    },
+                    "403": {
+                        "description": "Unauthenticated error"
+                    },
+                    "500": {
+                        "description": "Server error"
+                    }
+                }
+            }
+        },
+        "/majestic_seo/backlinks": {
+            "get": {
+                "tags": [
+                    "MajesticSeo"
+                ],
+                "summary": "MajesticSeo",
+                "description": "MajesticSeo",
+                "produces": [
+                    "application/xml",
+                    "application/json",
+                    "text/html",
+                    "application/vnd.php-object"
+                ],
+                "parameters": [
+                    {
+                        "name": "url",
+                        "in": "query",
+                        "description": "The subject url",
+                        "required": true,
+                        "type": "string",
+                        "default": ""
+                    },
+                    {
+                        "name": "datasource",
+                        "in": "query",
+                        "description": "Data source [Options: 'historic', 'fresh']",
+                        "required": false,
+                        "type": "string",
+                        "default": "historic"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "An example resource"
+                    },
+                    "204": {
+                        "description": "An empty resource"
+                    },
+                    "400": {
+                        "description": "Request error"
+                    },
+                    "401": {
+                        "description": "Unauthorized error"
+                    },
+                    "403": {
+                        "description": "Unauthenticated error"
+                    },
+                    "500": {
+                        "description": "Server error"
+                    }
+                }
+            }
+        },
+        "/majestic_seo/bllist": {
+            "get": {
+                "tags": [
+                    "MajesticSeo"
+                ],
+                "summary": "MajesticSeo",
+                "description": "MajesticSeo",
+                "produces": [
+                    "application/xml",
+                    "application/json",
+                    "text/html",
+                    "application/vnd.php-object"
+                ],
+                "parameters": [
+                    {
+                        "name": "url",
+                        "in": "query",
+                        "description": "The subject url",
+                        "required": true,
+                        "type": "string",
+                        "default": ""
+                    },
+                    {
+                        "name": "datasource",
+                        "in": "query",
+                        "description": "Data source [Options: 'historic', 'fresh']",
+                        "required": false,
+                        "type": "string",
+                        "default": "historic"
+                    },
+                    {
+                        "name": "count",
+                        "in": "query",
+                        "description": "Number of results",
+                        "required": true,
+                        "type": "number",
+                        "default": "",
+                        "maximum": 1000,
+                        "minimum": 50
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "An example resource"
+                    },
+                    "204": {
+                        "description": "An empty resource"
+                    },
+                    "400": {
+                        "description": "Request error"
+                    },
+                    "401": {
+                        "description": "Unauthorized error"
+                    },
+                    "403": {
+                        "description": "Unauthenticated error"
+                    },
+                    "500": {
+                        "description": "Server error"
+                    }
+                }
+            }
+        },
+        "/norton_websafe/safetyratingbydomain": {
+            "get": {
+                "tags": [
+                    "NortonWebsafe"
+                ],
+                "summary": "NortonWebsafe",
+                "description": "NortonWebsafe",
+                "produces": [
+                    "application/xml",
+                    "application/json",
+                    "text/html",
+                    "application/vnd.php-object"
+                ],
+                "parameters": [
+                    {
+                        "name": "domain",
+                        "in": "query",
+                        "description": "Domain to check e.g. example.com",
+                        "required": true,
+                        "type": "string",
+                        "default": ""
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "An example resource"
+                    },
+                    "204": {
+                        "description": "An empty resource"
+                    },
+                    "400": {
+                        "description": "Request error"
+                    },
+                    "401": {
+                        "description": "Unauthorized error"
+                    },
+                    "403": {
+                        "description": "Unauthenticated error"
+                    },
+                    "500": {
+                        "description": "Server error"
+                    }
+                }
+            }
+        },
+        "/product_ideas/categories": {
+            "get": {
+                "tags": [
+                    "ProductIdeas"
+                ],
+                "summary": "ProductIdeas",
+                "description": "ProductIdeas",
+                "produces": [
+                    "application/xml",
+                    "application/json",
+                    "text/html",
+                    "application/vnd.php-object"
+                ],
+                "parameters": [
+                    {
+                        "name": "feed",
+                        "in": "query",
+                        "description": " [Options: 'wishedlist', 'amazon', 'ali']",
+                        "required": true,
+                        "type": "string",
+                        "default": ""
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "An example resource"
+                    },
+                    "204": {
+                        "description": "An empty resource"
+                    },
+                    "400": {
+                        "description": "Request error"
+                    },
+                    "401": {
+                        "description": "Unauthorized error"
+                    },
+                    "403": {
+                        "description": "Unauthenticated error"
+                    },
+                    "500": {
+                        "description": "Server error"
+                    }
+                }
+            }
+        },
+        "/search/ns": {
+            "get": {
+                "tags": [
+                    "Search"
+                ],
+                "summary": "Search",
+                "description": "Search",
+                "produces": [
+                    "application/xml",
+                    "application/json",
+                    "text/html",
+                    "application/vnd.php-object"
+                ],
+                "parameters": [
+                    {
+                        "name": "engines",
+                        "in": "query",
+                        "description": "Search engine to query [Options: 'google', 'bing']",
+                        "required": false,
+                        "type": "array",
+                        "items": {
+                            "type": "string"
+                        },
+                        "collectionFormat": "csv",
+                        "default": ""
+                    },
+                    {
+                        "name": "keyword",
+                        "in": "query",
+                        "description": "Keyword search term",
+                        "required": true,
+                        "type": "string",
+                        "default": ""
+                    },
+                    {
+                        "name": "limit",
+                        "in": "query",
+                        "description": "Maximum number of search results",
+                        "required": false,
+                        "type": "number",
+                        "format": "integer",
+                        "default": 10,
+                        "maximum": 200,
+                        "minimum": 1
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "An example resource"
+                    },
+                    "204": {
+                        "description": "An empty resource"
+                    },
+                    "400": {
+                        "description": "Request error"
+                    },
+                    "401": {
+                        "description": "Unauthorized error"
+                    },
+                    "403": {
+                        "description": "Unauthenticated error"
+                    },
+                    "500": {
+                        "description": "Server error"
+                    }
+                }
+            }
+        },
+        "/search/pl": {
+            "get": {
+                "tags": [
+                    "Search"
+                ],
+                "summary": "Search",
+                "description": "Search",
+                "produces": [
+                    "application/xml",
+                    "application/json",
+                    "text/html",
+                    "application/vnd.php-object"
+                ],
+                "parameters": [
+                    {
+                        "name": "engines",
+                        "in": "query",
+                        "description": "Search engine to query [Options: 'google', 'bing']",
+                        "required": false,
+                        "type": "array",
+                        "items": {
+                            "type": "string"
+                        },
+                        "collectionFormat": "csv",
+                        "default": ""
+                    },
+                    {
+                        "name": "keyword",
+                        "in": "query",
+                        "description": "Keyword search term",
+                        "required": true,
+                        "type": "string",
+                        "default": ""
+                    },
+                    {
+                        "name": "limit",
+                        "in": "query",
+                        "description": "Maximum number of search results",
+                        "required": false,
+                        "type": "number",
+                        "format": "integer",
+                        "default": 10,
+                        "maximum": 200,
+                        "minimum": 1
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "An example resource"
+                    },
+                    "204": {
+                        "description": "An empty resource"
+                    },
+                    "400": {
+                        "description": "Request error"
+                    },
+                    "401": {
+                        "description": "Unauthorized error"
+                    },
+                    "403": {
+                        "description": "Unauthenticated error"
+                    },
+                    "500": {
+                        "description": "Server error"
+                    }
+                }
+            }
+        },
+        "/search/ps": {
+            "get": {
+                "tags": [
+                    "Search"
+                ],
+                "summary": "Search",
+                "description": "Search",
+                "produces": [
+                    "application/xml",
+                    "application/json",
+                    "text/html",
+                    "application/vnd.php-object"
+                ],
+                "parameters": [
+                    {
+                        "name": "engines",
+                        "in": "query",
+                        "description": "Search engine to query [Options: 'google', 'bing']",
+                        "required": false,
+                        "type": "array",
+                        "items": {
+                            "type": "string"
+                        },
+                        "collectionFormat": "csv",
+                        "default": ""
+                    },
+                    {
+                        "name": "keyword",
+                        "in": "query",
+                        "description": "Keyword search term",
+                        "required": true,
+                        "type": "string",
+                        "default": ""
+                    },
+                    {
+                        "name": "limit",
+                        "in": "query",
+                        "description": "Maximum number of search results",
+                        "required": false,
+                        "type": "number",
+                        "format": "integer",
+                        "default": 10,
+                        "maximum": 200,
+                        "minimum": 1
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "An example resource"
+                    },
+                    "204": {
+                        "description": "An empty resource"
+                    },
+                    "400": {
+                        "description": "Request error"
+                    },
+                    "401": {
+                        "description": "Unauthorized error"
+                    },
+                    "403": {
+                        "description": "Unauthenticated error"
+                    },
+                    "500": {
+                        "description": "Server error"
+                    }
+                }
+            }
+        },
+        "/sem_rush/keyword_report": {
+            "get": {
+                "tags": [
+                    "SemRush"
+                ],
+                "summary": "SemRush",
+                "description": "SemRush",
+                "produces": [
+                    "application/xml",
+                    "application/json",
+                    "text/html",
+                    "application/vnd.php-object"
+                ],
+                "parameters": [
+                    {
+                        "name": "database",
+                        "in": "query",
+                        "description": "Keyword database to use [Options: 'us', 'uk', 'ru', 'de', 'fr', 'es', 'it', 'br', 'ca', 'au']",
+                        "required": true,
+                        "type": "string",
+                        "default": ""
+                    },
+                    {
+                        "name": "keyword",
+                        "in": "query",
+                        "description": "Keyword search term",
+                        "required": true,
+                        "type": "string",
+                        "default": ""
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "An example resource"
+                    },
+                    "204": {
+                        "description": "An empty resource"
+                    },
+                    "400": {
+                        "description": "Request error"
+                    },
+                    "401": {
+                        "description": "Unauthorized error"
+                    },
+                    "403": {
+                        "description": "Unauthenticated error"
+                    },
+                    "500": {
+                        "description": "Server error"
+                    }
+                }
+            }
+        },
+        "/sem_rush/related_keywords": {
+            "get": {
+                "tags": [
+                    "SemRush"
+                ],
+                "summary": "SemRush",
+                "description": "SemRush",
+                "produces": [
+                    "application/xml",
+                    "application/json",
+                    "text/html",
+                    "application/vnd.php-object"
+                ],
+                "parameters": [
+                    {
+                        "name": "database",
+                        "in": "query",
+                        "description": "Keyword database to use [Options: 'us', 'uk', 'ru', 'de', 'fr', 'es', 'it', 'br', 'ca', 'au']",
+                        "required": true,
+                        "type": "string",
+                        "default": ""
+                    },
+                    {
+                        "name": "keyword",
+                        "in": "query",
+                        "description": "Keyword search term",
+                        "required": true,
+                        "type": "string",
+                        "default": ""
+                    },
+                    {
+                        "name": "offset",
+                        "in": "query",
+                        "description": "Position to seek to in result list",
+                        "required": false,
+                        "type": "number",
+                        "default": 0
+                    },
+                    {
+                        "name": "limit",
+                        "in": "query",
+                        "description": "Number of results to return",
+                        "required": false,
+                        "type": "number",
+                        "default": 10
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "An example resource"
+                    },
+                    "204": {
+                        "description": "An empty resource"
+                    },
+                    "400": {
+                        "description": "Request error"
+                    },
+                    "401": {
+                        "description": "Unauthorized error"
+                    },
+                    "403": {
+                        "description": "Unauthenticated error"
+                    },
+                    "500": {
+                        "description": "Server error"
+                    }
+                }
+            }
+        },
+        "/sem_rush/phrase_fullsearch": {
+            "get": {
+                "tags": [
+                    "SemRush"
+                ],
+                "summary": "SemRush",
+                "description": "SemRush",
+                "produces": [
+                    "application/xml",
+                    "application/json",
+                    "text/html",
+                    "application/vnd.php-object"
+                ],
+                "parameters": [
+                    {
+                        "name": "database",
+                        "in": "query",
+                        "description": "Keyword database to use [Options: 'us', 'uk', 'ru', 'de', 'fr', 'es', 'it', 'br', 'ca', 'au']",
+                        "required": true,
+                        "type": "string",
+                        "default": ""
+                    },
+                    {
+                        "name": "keyword",
+                        "in": "query",
+                        "description": "Keyword search term",
+                        "required": true,
+                        "type": "string",
+                        "default": ""
+                    },
+                    {
+                        "name": "offset",
+                        "in": "query",
+                        "description": "Position to seek to in result list",
+                        "required": false,
+                        "type": "number",
+                        "default": 0
+                    },
+                    {
+                        "name": "limit",
+                        "in": "query",
+                        "description": "Number of results to return",
+                        "required": false,
+                        "type": "number",
+                        "default": 10
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "An example resource"
+                    },
+                    "204": {
+                        "description": "An empty resource"
+                    },
+                    "400": {
+                        "description": "Request error"
+                    },
+                    "401": {
+                        "description": "Unauthorized error"
+                    },
+                    "403": {
+                        "description": "Unauthenticated error"
+                    },
+                    "500": {
+                        "description": "Server error"
+                    }
+                }
+            }
+        },
+        "/seomoz/url-metrics": {
+            "get": {
+                "tags": [
+                    "Seomoz"
+                ],
+                "summary": "Seomoz",
+                "description": "Seomoz",
+                "produces": [
+                    "application/xml",
+                    "application/json",
+                    "text/html",
+                    "application/vnd.php-object"
+                ],
+                "parameters": [
+                    {
+                        "name": "url",
+                        "in": "query",
+                        "description": "The subject url",
+                        "required": true,
+                        "type": "string",
+                        "default": ""
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "An example resource"
+                    },
+                    "204": {
+                        "description": "An empty resource"
+                    },
+                    "400": {
+                        "description": "Request error"
+                    },
+                    "401": {
+                        "description": "Unauthorized error"
+                    },
+                    "403": {
+                        "description": "Unauthenticated error"
+                    },
+                    "500": {
+                        "description": "Server error"
+                    }
+                }
+            }
+        },
+        "/seomoz/link-data": {
+            "get": {
+                "tags": [
+                    "Seomoz"
+                ],
+                "summary": "Seomoz",
+                "description": "Seomoz",
+                "produces": [
+                    "application/xml",
+                    "application/json",
+                    "text/html",
+                    "application/vnd.php-object"
+                ],
+                "parameters": [
+                    {
+                        "name": "url",
+                        "in": "query",
+                        "description": "The subject url",
+                        "required": true,
+                        "type": "string",
+                        "default": ""
+                    },
+                    {
+                        "name": "scope",
+                        "in": "query",
+                        "description": "Scope [Options: 'page_to_page', 'page_to_subdomain', 'page_to_domain', 'domain_to_page', 'domain_to_subdomain', 'domain_to_domain']",
+                        "required": false,
+                        "type": "string",
+                        "default": ""
+                    },
+                    {
+                        "name": "sort",
+                        "in": "query",
+                        "description": "Sort [Options: 'page_authority', 'domain_authority', 'domains_linking_domain', 'domains_linking_page']",
+                        "required": false,
+                        "type": "string",
+                        "default": ""
+                    },
+                    {
+                        "name": "filter",
+                        "in": "query",
+                        "description": "Filters [Options: 'internal', 'external', 'nofollow', 'follow', '301']",
+                        "required": false,
+                        "type": "array",
+                        "items": {
+                            "type": "string"
+                        },
+                        "collectionFormat": "csv",
+                        "default": ""
+                    },
+                    {
+                        "name": "limit",
+                        "in": "query",
+                        "description": "Limit",
+                        "required": false,
+                        "type": "number",
+                        "format": "integer",
+                        "default": 50,
+                        "maximum": 1000,
+                        "minimum": 1
+                    },
+                    {
+                        "name": "offset",
+                        "in": "query",
+                        "description": "Offset",
+                        "required": false,
+                        "type": "number",
+                        "format": "integer",
+                        "default": 0
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "An example resource"
+                    },
+                    "204": {
+                        "description": "An empty resource"
+                    },
+                    "400": {
+                        "description": "Request error"
+                    },
+                    "401": {
+                        "description": "Unauthorized error"
+                    },
+                    "403": {
+                        "description": "Unauthenticated error"
+                    },
+                    "500": {
+                        "description": "Server error"
+                    }
+                }
+            }
+        },
+        "/seomoz/anchor-text-data": {
+            "get": {
+                "tags": [
+                    "Seomoz"
+                ],
+                "summary": "Seomoz",
+                "description": "Seomoz",
+                "produces": [
+                    "application/xml",
+                    "application/json",
+                    "text/html",
+                    "application/vnd.php-object"
+                ],
+                "parameters": [
+                    {
+                        "name": "url",
+                        "in": "query",
+                        "description": "The subject url",
+                        "required": true,
+                        "type": "string",
+                        "default": ""
+                    },
+                    {
+                        "name": "scope",
+                        "in": "query",
+                        "description": "Scope [Options: 'phrase_to_page', 'phrase_to_subdomain', 'phrase_to_domain', 'term_to_page', 'term_to_subdomain', 'term_to_domain']",
+                        "required": false,
+                        "type": "string",
+                        "default": ""
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "An example resource"
+                    },
+                    "204": {
+                        "description": "An empty resource"
+                    },
+                    "400": {
+                        "description": "Request error"
+                    },
+                    "401": {
+                        "description": "Unauthorized error"
+                    },
+                    "403": {
+                        "description": "Unauthenticated error"
+                    },
+                    "500": {
+                        "description": "Server error"
+                    }
+                }
+            }
+        },
+        "/trade_show/countries": {
+            "get": {
+                "tags": [
+                    "TradeShow"
+                ],
+                "summary": "TradeShow",
+                "description": "TradeShow",
+                "produces": [
+                    "application/xml",
+                    "application/json",
+                    "text/html",
+                    "application/vnd.php-object"
+                ],
+                "responses": {
+                    "200": {
+                        "description": "An example resource"
+                    },
+                    "204": {
+                        "description": "An empty resource"
+                    },
+                    "400": {
+                        "description": "Request error"
+                    },
+                    "401": {
+                        "description": "Unauthorized error"
+                    },
+                    "403": {
+                        "description": "Unauthenticated error"
+                    },
+                    "500": {
+                        "description": "Server error"
+                    }
+                }
+            }
+        },
+        "/trade_show/eventssummarybycountry": {
+            "get": {
+                "tags": [
+                    "TradeShow"
+                ],
+                "summary": "TradeShow",
+                "description": "TradeShow",
+                "produces": [
+                    "application/xml",
+                    "application/json",
+                    "text/html",
+                    "application/vnd.php-object"
+                ],
+                "parameters": [
+                    {
+                        "name": "countryCode",
+                        "in": "query",
+                        "description": "Country",
+                        "required": true,
+                        "type": "string",
+                        "default": ""
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "An example resource"
+                    },
+                    "204": {
+                        "description": "An empty resource"
+                    },
+                    "400": {
+                        "description": "Request error"
+                    },
+                    "401": {
+                        "description": "Unauthorized error"
+                    },
+                    "403": {
+                        "description": "Unauthenticated error"
+                    },
+                    "500": {
+                        "description": "Server error"
+                    }
+                }
+            }
+        },
+        "/trade_show/eventlistbycountryandcity": {
+            "get": {
+                "tags": [
+                    "TradeShow"
+                ],
+                "summary": "TradeShow",
+                "description": "TradeShow",
+                "produces": [
+                    "application/xml",
+                    "application/json",
+                    "text/html",
+                    "application/vnd.php-object"
+                ],
+                "parameters": [
+                    {
+                        "name": "countryCode",
+                        "in": "query",
+                        "description": "Country code",
+                        "required": true,
+                        "type": "string",
+                        "default": ""
+                    },
+                    {
+                        "name": "city",
+                        "in": "query",
+                        "description": "City name",
+                        "required": true,
+                        "type": "string",
+                        "default": ""
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "An example resource"
+                    },
+                    "204": {
+                        "description": "An empty resource"
+                    },
+                    "400": {
+                        "description": "Request error"
+                    },
+                    "401": {
+                        "description": "Unauthorized error"
+                    },
+                    "403": {
+                        "description": "Unauthenticated error"
+                    },
+                    "500": {
+                        "description": "Server error"
+                    }
+                }
+            }
+        },
+        "/website_info/extractwebsiteinfobydomain": {
+            "get": {
+                "tags": [
+                    "WebsiteInfo"
+                ],
+                "summary": "WebsiteInfo",
+                "description": "WebsiteInfo",
+                "produces": [
+                    "application/xml",
+                    "application/json",
+                    "text/html",
+                    "application/vnd.php-object"
+                ],
+                "parameters": [
+                    {
+                        "name": "domain",
+                        "in": "query",
+                        "description": "Domain to check e.g. example.com",
+                        "required": true,
+                        "type": "string",
+                        "default": ""
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "An example resource"
+                    },
+                    "204": {
+                        "description": "An empty resource"
+                    },
+                    "400": {
+                        "description": "Request error"
+                    },
+                    "401": {
+                        "description": "Unauthorized error"
+                    },
+                    "403": {
+                        "description": "Unauthenticated error"
+                    },
+                    "500": {
+                        "description": "Server error"
+                    }
+                }
+            }
+        },
+        "/whois_xml_api": {
+            "get": {
+                "tags": [
+                    "WhoisXmlApi"
+                ],
+                "summary": "WhoisXmlApi",
+                "description": "WhoisXmlApi",
+                "produces": [
+                    "application/xml",
+                    "application/json",
+                    "text/html",
+                    "application/vnd.php-object"
+                ],
+                "parameters": [
+                    {
+                        "name": "domain",
+                        "in": "query",
+                        "description": "The domain to get whois data for, e.g. example.com",
+                        "required": true,
+                        "type": "string",
+                        "default": ""
+                    },
+                    {
+                        "name": "outputFormat",
+                        "in": "query",
+                        "description": "Return whois results in xml, json or raw format [Options: 'xml', 'json', 'raw']",
+                        "required": false,
+                        "type": "string",
+                        "default": "raw"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "An example resource"
+                    },
+                    "204": {
+                        "description": "An empty resource"
+                    },
+                    "400": {
+                        "description": "Request error"
+                    },
+                    "401": {
+                        "description": "Unauthorized error"
+                    },
+                    "403": {
+                        "description": "Unauthenticated error"
+                    },
+                    "500": {
+                        "description": "Server error"
+                    }
+                }
+            }
+        },
+        "/wot/domaintrustworthinessmetric": {
+            "get": {
+                "tags": [
+                    "Wot"
+                ],
+                "summary": "Wot",
+                "description": "Wot",
+                "produces": [
+                    "application/xml",
+                    "application/json",
+                    "text/html",
+                    "application/vnd.php-object"
+                ],
+                "parameters": [
+                    {
+                        "name": "domain",
+                        "in": "query",
+                        "description": "Domain to check e.g. example.com",
+                        "required": true,
+                        "type": "string",
+                        "default": ""
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "An example resource"
+                    },
+                    "204": {
+                        "description": "An empty resource"
+                    },
+                    "400": {
+                        "description": "Request error"
+                    },
+                    "401": {
+                        "description": "Unauthorized error"
+                    },
+                    "403": {
+                        "description": "Unauthenticated error"
+                    },
+                    "500": {
+                        "description": "Server error"
+                    }
+                }
+            }
+        }
+    },
+    "definitions": {},
+    "securityDefinitions": {
+        "api_key": {
+            "type": "apiKey",
+            "name": "Api-Auth-Token",
+            "in": "header"
+        }
+    },
+    "tags": [
+        {
+            "name": "Alexa",
+            "description": "Alexa"
+        },
+        {
+            "name": "AlexaTopSites",
+            "description": "AlexaTopSites"
+        },
+        {
+            "name": "BatchRequest",
+            "description": "BatchRequest"
+        },
+        {
+            "name": "Bbb",
+            "description": "Bbb"
+        },
+        {
+            "name": "BingSearch",
+            "description": "BingSearch"
+        },
+        {
+            "name": "CurrencySource",
+            "description": "CurrencySource"
+        },
+        {
+            "name": "DomainToolsOpensrs",
+            "description": "DomainToolsOpensrs"
+        },
+        {
+            "name": "EbayFindingApi",
+            "description": "EbayFindingApi"
+        },
+        {
+            "name": "EbayResearchApiAlt",
+            "description": "EbayResearchApiAlt"
+        },
+        {
+            "name": "GoogleSearch",
+            "description": "GoogleSearch"
+        },
+        {
+            "name": "GoogleTrends",
+            "description": "GoogleTrends"
+        },
+        {
+            "name": "MajesticSeo",
+            "description": "MajesticSeo"
+        },
+        {
+            "name": "NortonWebsafe",
+            "description": "NortonWebsafe"
+        },
+        {
+            "name": "ProductIdeas",
+            "description": "ProductIdeas"
+        },
+        {
+            "name": "Search",
+            "description": "Search"
+        },
+        {
+            "name": "SemRush",
+            "description": "SemRush"
+        },
+        {
+            "name": "Seomoz",
+            "description": "Seomoz"
+        },
+        {
+            "name": "TradeShow",
+            "description": "TradeShow"
+        },
+        {
+            "name": "WebsiteInfo",
+            "description": "WebsiteInfo"
+        },
+        {
+            "name": "WhoisXmlApi",
+            "description": "WhoisXmlApi"
+        },
+        {
+            "name": "Wot",
+            "description": "Wot"
+        }
+    ]
+}

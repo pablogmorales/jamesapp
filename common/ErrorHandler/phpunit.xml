@@ -1,0 +1,13 @@
+<phpunit bootstrap="vendor/autoload.php" colors="true">
+    <testsuites>
+        <testsuite name="Error Handler Test Suite">
+            <directory>tests/</directory>
+            <exclude>tests/SomeCakeRelatedStuff</exclude>
+        </testsuite>
+    </testsuites>
+    <filter>
+        <whitelist>
+            <directory suffix=".php">src</directory>
+        </whitelist>
+    </filter>
+</phpunit>

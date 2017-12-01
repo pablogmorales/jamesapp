@@ -1,0 +1,28 @@
+{
+    "name": "ddm/daytalytics",
+    "description": "Daytalytics WebAPI",
+    "authors": [
+        {
+            "name": "Doubledot Media Developers",
+            "email": "dev@doubledotmedia.com"
+        }
+    ],
+    "require": {
+        "vlucas/phpdotenv": "^2.3",
+        "zendframework/zend-diactoros": "^1.3"
+    },
+    "autoload": {
+        "psr-4": {
+			"Daytalytics\\": "src/"
+		}
+	},
+	"autoload-dev": {
+		"psr-4": {
+			"Daytalytics\\Tests\\": "tests/"
+		}
+	},
+    "require-dev": {
+        "phpunit/phpunit": "^5.5",
+        "zircote/swagger-php": "^2.0"
+    }
+}

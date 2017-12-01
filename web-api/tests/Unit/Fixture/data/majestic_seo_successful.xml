@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Result Code="OK" ErrorMessage="" FullError="">
+    <GlobalVars FirstBackLinkDate="2006-06-06" IndexBuildDate="2010-11-17 07:20:51" MostRecentBackLinkDate="2010-11-11" RecentBackLinksFromDate="2010-08-13"/>
+    <DataTables Count="1">
+        <DataTable Name="Results" RowsCount="1" Headers="ItemNum|Item|ResultCode|Status|ExtBackLinks|RefDomains|AnalysisResUnitsCost|ACRank|ItemType|IndexedURLs|GetTopBackLinksAnalysisResUnitsCost|RefIPs|RefSubNets|RefDomainsEDU|ExtBackLinksEDU|RefDomainsGOV|ExtBackLinksGOV|RefDomainsEDU_Exact|ExtBackLinksEDU_Exact|RefDomainsGOV_Exact|ExtBackLinksGOV_Exact|CrawledFlag|LastCrawlDate|LastCrawlResult|RedirectFlag|FinalRedirectResult|OutDomainsExternal|OutLinksExternal|OutLinksInternal|LastSeen|Title">
+            <Row>0|php.net|OK|Found|3454841680|1067108|3454841680|-1|1|17681877|50000|374817|117797|4189|8538113|994|1756245|1368|902241|144|19932|False| | |False| |0|0|0| |PHP: Hypertext Preprocessor</Row>
+        </DataTable>
+    </DataTables>
+</Result>
